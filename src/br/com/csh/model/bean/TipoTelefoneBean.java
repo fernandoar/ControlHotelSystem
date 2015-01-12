@@ -1,4 +1,4 @@
-package br.com.csh.bean;
+package br.com.csh.model.bean;
 
 import java.io.Serializable;
 import javax.persistence.*;

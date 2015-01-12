@@ -1,35 +1,35 @@
-package br.com.csh.bean;
+package br.com.csh.model.bean;
 
 import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table(name="TipoEndereco")
-public class TipoEnderecoBean implements Serializable {
+@Table(name="QuartoCategoria")
+public class QuartoCategoriaBean implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int tipoEnderecoID;
+	private int quartoCategoriaID;
 	@Column(name="descricao", length=20, nullable=false, unique=true)
 	private String descricao;
 	
-	public TipoEnderecoBean(){
+	public QuartoCategoriaBean() {
 		super();
 	}
 	
-	public TipoEnderecoBean(int tipoEnderecoID, String descricao) {
+	public QuartoCategoriaBean(int quartoCategoriaID, String descricao) {
 		super();
-		this.tipoEnderecoID = tipoEnderecoID;
+		this.quartoCategoriaID = quartoCategoriaID;
 		this.descricao = descricao;
 	}
 
-	public int getTipoEnderecoID() {
-		return tipoEnderecoID;
+	public int getQuartoCategoriaID() {
+		return quartoCategoriaID;
 	}
-	public void setTipoEnderecoID(int tipoEnderecoID) {
-		this.tipoEnderecoID = tipoEnderecoID;
+	public void setQuartoCategoriaID(int quartoCategoriaID) {
+		this.quartoCategoriaID = quartoCategoriaID;
 	}
 	
 	public String getDescricao() {
@@ -38,6 +38,4 @@ public class TipoEnderecoBean implements Serializable {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	
 }

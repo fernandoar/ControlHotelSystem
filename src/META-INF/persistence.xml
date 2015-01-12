@@ -2,14 +2,14 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="CSHUnity" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>br.com.csh.bean.EstadoCivilBean</class>
-		<class>br.com.csh.bean.PessoaBean</class>
-		<class>br.com.csh.bean.PessoaFisicaBean</class>
-		<class>br.com.csh.bean.PessoaJuridicaBean</class>
-		<class>br.com.csh.bean.ProfissaoBean</class>
-		<class>br.com.csh.bean.QuartoCategoriaBean</class>
-		<class>br.com.csh.bean.TipoEnderecoBean</class>
-		<class>br.com.csh.bean.TipoTelefoneBean</class>
+		<class>br.com.csh.model.bean.EstadoCivilBean</class>
+		<class>br.com.csh.model.bean.PessoaBean</class>
+		<class>br.com.csh.model.bean.PessoaFisicaBean</class>
+		<class>br.com.csh.model.bean.PessoaJuridicaBean</class>
+		<class>br.com.csh.model.bean.ProfissaoBean</class>
+		<class>br.com.csh.model.bean.QuartoCategoriaBean</class>
+		<class>br.com.csh.model.bean.TipoEnderecoBean</class>
+		<class>br.com.csh.model.bean.TipoTelefoneBean</class>
 		<properties>
            	<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
            	<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/csh"/>
