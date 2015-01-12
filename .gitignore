@@ -10,6 +10,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+<<<<<<< HEAD
 
 # =========================
 # Operating System Files
@@ -57,3 +58,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+=======
+>>>>>>> 82cd51a24a41dfcc5133c55f691a93f526919049
