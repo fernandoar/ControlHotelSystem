@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="CSHUnity" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>br.com.csh.bean.EstadoCivilBean</class>
+		<class>br.com.csh.bean.PessoaBean</class>
+		<class>br.com.csh.bean.PessoaFisicaBean</class>
+		<class>br.com.csh.bean.PessoaJuridicaBean</class>
+		<class>br.com.csh.bean.ProfissaoBean</class>
+		<class>br.com.csh.bean.QuartoCategoriaBean</class>
+		<class>br.com.csh.bean.TipoEnderecoBean</class>
+		<class>br.com.csh.bean.TipoTelefoneBean</class>
+		<properties>
+           	<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+           	<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/csh"/>
+           	<property name="hibernate.connection.username" value="root"/>
+           	<property name="hibernate.connection.password" value="root"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<!-- <property name="eclipselink.logging.level" value="FINE"/>
+			<property name="eclipselink.ddl-generation" value="create-tables"/> -->
+		</properties>
+	</persistence-unit>
+</persistence>
