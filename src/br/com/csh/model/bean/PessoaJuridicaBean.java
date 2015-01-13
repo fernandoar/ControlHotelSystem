@@ -1,85 +1,105 @@
 package br.com.csh.model.bean;
 
-import java.io.Serializable;
-import java.util.Date;
+import java.util.Collection;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
 
 @Entity
 @Table(name="PessoaJuridica")
-public class PessoaJuridicaBean extends PessoaBean implements Serializable {
+public class PessoaJuridicaBean extends PessoaBean {
 
 	private static final long serialVersionUID = 1L;
 
+	@Column(length=60)
 	private String razaoSocial;
+	
+	@Column(length=150)
 	private String fantasia;
+	
+	@Column(length=14, unique=true)
 	private String CNPJ;
+	
+	@Column(length=15)
 	private String inscricaoEstadual;
+	
+	@Column(length=15)
 	private String inscricaoMunicipal;
+	
+	@Column(length=150, unique=true)
 	private String codigoReserva;
 	
-	public PessoaJuridicaBean() {
-		super();
-	}
-	
-	public PessoaJuridicaBean(int pessoaID, String email, Date dataCadastro,
-			Date dataAlteracao, Boolean ativo, String razaoSocial,
-			String fantasia, String cNPJ, String inscricaoEstadual,
-			String inscricaoMunicipal, String codigoReserva) {
-		super(pessoaID, email, dataCadastro, dataAlteracao, ativo);
-		this.razaoSocial = razaoSocial;
-		this.fantasia = fantasia;
-		CNPJ = cNPJ;
-		this.inscricaoEstadual = inscricaoEstadual;
-		this.inscricaoMunicipal = inscricaoMunicipal;
-		this.codigoReserva = codigoReserva;
-	}
-
-	public PessoaJuridicaBean(int pessoaID, String email, Date dataCadastro,
-			Date dataAlteracao, Boolean ativo) {
-		super(pessoaID, email, dataCadastro, dataAlteracao, ativo);
-		// TODO Auto-generated constructor stub
-	}
+	@ManyToMany
+	@JoinTable(name="PessoaJuridicaXPessoaFisica",
+				joinColumns = @JoinColumn(name="pessoaJuridicaId"),
+				inverseJoinColumns = @JoinColumn(name="pessoaFisicaId"))
+	private Collection<PessoaFisicaBean> pessoasFisica;
 	
 	public String getRazaoSocial() {
 		return razaoSocial;
 	}
-	public void setRazaoSocial(String razaoSocial) {
+	public PessoaJuridicaBean setRazaoSocial(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
+		
+		return this;
 	}
 	
 	public String getFantasia() {
 		return fantasia;
 	}
-	public void setFantasia(String fantasia) {
+	public PessoaJuridicaBean setFantasia(String fantasia) {
 		this.fantasia = fantasia;
+		
+		return this;
 	}
 	
 	public String getCNPJ() {
 		return CNPJ;
 	}
-	public void setCNPJ(String cNPJ) {
+	public PessoaJuridicaBean setCNPJ(String cNPJ) {
 		CNPJ = cNPJ;
+		
+		return this;
 	}
 	
 	public String getInscricaoEstadual() {
 		return inscricaoEstadual;
 	}
-	public void setInscricaoEstadual(String inscricaoEstadual) {
+	public PessoaJuridicaBean setInscricaoEstadual(String inscricaoEstadual) {
 		this.inscricaoEstadual = inscricaoEstadual;
+		
+		return this;
 	}
 	
 	public String getInscricaoMunicipal() {
 		return inscricaoMunicipal;
 	}	
-	public void setInscricaoMunicipal(String inscricaoMunicipal) {
+	public PessoaJuridicaBean setInscricaoMunicipal(String inscricaoMunicipal) {
 		this.inscricaoMunicipal = inscricaoMunicipal;
+		
+		return this;
 	}
 	
 	public String getCodigoReserva() {
 		return codigoReserva;
 	}
-	public void setCodigoReserva(String codigoReserva) {
+	public PessoaJuridicaBean setCodigoReserva(String codigoReserva) {
 		this.codigoReserva = codigoReserva;
+		
+		return this;
+	}
+	
+	public Collection<PessoaFisicaBean> getPessoasFisica(){
+		return this.pessoasFisica;
+	}
+	public PessoaJuridicaBean setPessoasFisica(Collection<PessoaFisicaBean> pessoasFisica){
+		this.pessoasFisica = pessoasFisica;
+		
+		return this;
 	}
 }
