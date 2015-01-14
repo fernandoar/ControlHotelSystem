@@ -1,40 +1,38 @@
 package br.com.csh.model.bean;
 
-import java.io.Serializable;
-import javax.persistence.*;
+import java.util.Collection;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="EstadoCivil")
-public class EstadoCivilBean implements Serializable {
+public class EstadoCivilBean extends GenericBean {
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int estadoCivilID;
-	@Column(name="descricao", length=20, nullable=false, unique=true)
+	@Column(length=20, nullable=false, unique=true)
 	private String descricao;
 	
-	public EstadoCivilBean() {
-		super();
-	}
-	
-	public EstadoCivilBean(int estadoCivilID, String descricao) {
-		super();
-		this.estadoCivilID = estadoCivilID;
-		this.descricao = descricao;
-	}
-	
-	public int getEstadoCivilID() {
-		return estadoCivilID;
-	}
-	public void setEstadoCivilID(int estadoCivilID) {
-		this.estadoCivilID = estadoCivilID;
-	}
+	@OneToMany(mappedBy="estadoCivil")
+	private Collection<PessoaFisicaBean> pessoasFisica;
 	
 	public String getDescricao() {
 		return descricao;
 	}
-	public void setDescricao(String descricao) {
+	public EstadoCivilBean setDescricao(String descricao) {
 		this.descricao = descricao;
+		
+		return this;
+	}
+	
+	public Collection<PessoaFisicaBean> getPessoasFisica(){
+		return this.pessoasFisica;
+	}
+	public EstadoCivilBean setPessoasFisica(Collection<PessoaFisicaBean> pessoasFisica){
+		this.pessoasFisica = pessoasFisica;
+		
+		return this;
 	}
 }

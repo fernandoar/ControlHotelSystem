@@ -46,7 +46,7 @@ public class EnderecoBean extends GenericBean {
 	public int getNumero(){
 		return this.numero;
 	}
-	public EnderecoBean setNumer(int numero){
+	public EnderecoBean setNumero(int numero){
 		this.numero = numero;
 		
 		return this;
@@ -57,6 +57,69 @@ public class EnderecoBean extends GenericBean {
 	}
 	public EnderecoBean setCep(String cep){
 		this.cep = cep;
+		
+		return this;
+	}
+	
+	public String getBairro(){
+		return this.bairro;
+	}
+	public EnderecoBean setBairro(String bairro){
+		this.bairro = bairro;
+		
+		return this;
+	}
+	
+	public String getComplemento(){
+		return this.complemento;		
+	}
+	public EnderecoBean setComplemento(String complemento){
+		this.complemento = complemento;
+		
+		return this;
+	}
+	
+	public String getReferencia(){
+		return this.referencia;
+	}
+	public EnderecoBean setReferencia(String referencia){
+		this.referencia = referencia;
+		
+		return this;
+	}
+	
+	public PessoaBean getPessoa(){
+		return this.pessoa;
+	}
+	public EnderecoBean setPessoa(PessoaBean pessoa){
+		this.pessoa = pessoa;
+		
+		return this;
+	}
+	
+	public TipoEnderecoBean getTipoEndereco(){
+		return this.tipoEndereco;
+	}
+	public EnderecoBean setTipoEndereco(TipoEnderecoBean tipoEndereco){
+		this.tipoEndereco = tipoEndereco;
+		
+		return this;
+	}
+	
+	public CidadeBean getCidade(){
+		return this.cidade;
+	}
+	public EnderecoBean setCidade(CidadeBean cidade){
+		this.cidade = cidade;
+		
+		return this;
+	}
+	
+	public TipoLogradouroBean getTipoLogradouro(){
+		return this.tipoLogradouro;
+	}
+	public EnderecoBean setTipoLogradouro(TipoLogradouroBean tipoLogradouro){
+		this.tipoLogradouro = tipoLogradouro;
 		
 		return this;
 	}

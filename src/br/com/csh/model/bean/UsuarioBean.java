@@ -1,18 +1,15 @@
 package br.com.csh.model.bean;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="Usuario")
-public class UsuarioBean implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class UsuarioBean {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -22,8 +19,7 @@ public class UsuarioBean implements Serializable {
 		return id;
 	}
 
-	public UsuarioBean setId(int id) {
+	public void setId(int id) {
 		this.id = id;
-		return this;
 	}
 }
